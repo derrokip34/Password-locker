@@ -63,15 +63,28 @@ class TestCredentials(unittest.TestCase):
         """
         setup method that defines instructions
         """
-        Credentials.credentials_list = []
+        self.new_credentials = Credentials("Rockstar games","orred34","montolivo18")
 
-    def __init__(self,account_name,username,account_password):
+    def test_init(self):
         """
         test to see if credentials object is initialized correctly
         """
-        self.account_name = account_name
-        self.username = username
-        self.account_password = account_password
+        self.assertEqual(self.new_credentials.account_name,"Rockstar games")
+        self.assertEqual(self.new_credentials.username,"orred34")
+        self.assertEqual(self.new_credentials.account_password,"montolivo18")
+
+    def tearDown(self):
+        """
+        tearDown method that does clean up after each test case has run
+        """
+        Credentials.credentials_list = []
+
+    def test_save_credentials(self):
+        """
+        test to see if a contact is saved 
+        """
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 if __name__ == '__main__':
     unittest.main()
