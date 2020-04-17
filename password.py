@@ -62,3 +62,12 @@ class Credentials:
         function to display account credentials
         """
         return cls.credentials_list
+
+    @classmethod
+    def generate_password(stringLength = 10):
+        """
+        function that will generate a random password
+        """
+        chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
+        size = 8
+        return ''.join(random.choice(chars) for x in range(size,15))
