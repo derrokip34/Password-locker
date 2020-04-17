@@ -71,3 +71,12 @@ class Credentials:
         chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
         size = 8
         return ''.join(random.choice(chars) for x in range(size,15))
+
+    @classmethod
+    def find_by_name(cls,name):
+        """
+        function that finds an account object by name
+        """
+        for account in cls.credentials_list:
+            if account.account_name == name:
+                return account
