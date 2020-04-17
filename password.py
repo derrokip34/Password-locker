@@ -48,3 +48,11 @@ class Credentials:
         save credentials object onto credentials list
         """
         Credentials.credentials_list.append(self)
+
+    
+    @classmethod
+    def display_credentials(cls):
+        """
+        function to display account credentials
+        """
+        return cls.credentials_list
