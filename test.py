@@ -35,7 +35,7 @@ class TestUser(unittest.TestCase):
         """
         User.users_list = []
 
-    def test_save_multiple_contact(self):
+    def test_save_multiple_user(self):
         """
         test to see if we can save multiple users to users_list
         """
@@ -85,6 +85,15 @@ class TestCredentials(unittest.TestCase):
         """
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_save_multiple_credentials(self):
+        """
+        test for saving multiple contacts
+        """
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Marvel","Derrick","enkay2008")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
 
 if __name__ == '__main__':
     unittest.main()
