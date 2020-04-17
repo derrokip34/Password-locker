@@ -22,6 +22,12 @@ class User:
         """
         User.users_list.append(self)
 
+    def delete_user(self):
+        """
+        method that deletes a user
+        """
+        User.users_list.remove(self)
+
 class Credentials:
     """
     Class that generates new instances of credentials
