@@ -54,5 +54,24 @@ class TestUser(unittest.TestCase):
         self.new_user.delete_user()
         self.assertEqual(len(User.users_list),1)
 
+class TestCredentials(unittest.TestCase):
+    """
+    Class that tests behaviour of credentials class
+    """
+    
+    def setUp(self):
+        """
+        setup method that defines instructions
+        """
+        Credentials.credentials_list = []
+
+    def __init__(self,account_name,username,account_password):
+        """
+        test to see if credentials object is initialized correctly
+        """
+        self.account_name = account_name
+        self.username = username
+        self.account_password = account_password
+
 if __name__ == '__main__':
     unittest.main()

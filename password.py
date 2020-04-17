@@ -34,11 +34,11 @@ class Credentials:
     """
     credentials_list = []
 
-    def __init__(self,account_name,username,password):
+    def __init__(self,account_name,username,account_password):
         """
         This function initializes user's credentials
         """
 
         self.account_name = account_name
         self.username = username
-        self.password = password
+        self.account_password = account_password
