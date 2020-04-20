@@ -76,6 +76,7 @@ def main():
                 password = input()
             else:
                 password = generate_password()
+                print(f"Your generated password is {password}")
 
             save_user(create_login(fname,lname,password))
             print('\n')
